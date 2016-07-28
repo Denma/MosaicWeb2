@@ -23,18 +23,19 @@
 		- >> git add *
 		- >> git commit -m "first commit" 
 	- Local ====push===> Remote (최초 동기화)
-		- >> git remote add origin https://github.com/Denma/MosaicWeb.git
+		- >> git remote add origin https://github.com/Denma/MosaicWeb2.git
 		- >> git remote -v
 		- >> git remote remove origin (remote제거)
-		- >> git remote add origin https://github.com/Denma/MosaicWeb.git
+		- >> git remote add origin https://github.com/Denma/MosaicWeb2.git
 		- >> git push -u origin master
 	- 개발자 2가 Clone 수행
-		- >> git clone https://github.com/Denma/MosaicWeb.git
-		- >> git clone https://github.com/Denma/MosaicWeb.git MosaicWebDev (MasaicWebDev폴더 생성 후 Clone)
+		- >> git clone https://github.com/Denma/MosaicWeb2.git
+		- >> git clone https://github.com/Denma/MosaicWeb2.git MosaicWebDev2 (MasaicWebDev2폴더 생성 후 Clone)
 		- >> Eclipse Gradle Import		
 	- 개발자 1(master)의 변경사항 저장
 		- >> git add .
 		- >> git status
+		- >> git commit -m "second commit"
 		- >> git git push
 	- 개발자 2가 변경사항 받아오기
 		- >> git pull
