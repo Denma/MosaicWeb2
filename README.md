@@ -1,5 +1,5 @@
 
-1. Spring Starter Project »ı¼º
+1. Spring Starter Project ìƒì„±
 
 	- Name : MosaicWeb
 	- Type : Gradle(Buildship)
@@ -8,36 +8,116 @@
 	- Artifact : MosaicWeb
 	- Package : com.hybrid
 	
-	- Dependencies ¼±ÅÃ : Web - Web
-2. Çü»ó°ü¸®
-	
-	- README.md »ı¼º
-	- Remote Repository »ı¼º (github)
-	- Local Repository »ı¼º
-		- >> gradle build
+	- Dependencies ì„ íƒ : Web - Web
+2. í˜•ìƒê´€ë¦¬
+
+	- Remote Repository ìƒì„± (github)
+	- Local Repository ìƒì„±
 		- >> git status
 		- >> git log
 		- >> dir /A > .gitignore
-		- >> notepad .gitignore ÆíÁı
+		- >> notepad .gitignore í¸ì§‘
 		- >> git init
 		- >> git add *
 		- >> git commit -m "first commit" 
-	- Local ====push===> Remote (ÃÖÃÊ µ¿±âÈ­)
-		- >> git remote add origin https://github.com/Denma/MosaicWeb2.git
+	- Local ====push===> Remote (ìµœì´ˆ ë™ê¸°í™”)
+		- >> git remote add origin https://github.com/Denma/MosaicWeb.git
 		- >> git remote -v
-		- >> git remote remove origin (remoteÁ¦°Å)
-		- >> git remote add origin https://github.com/Denma/MosaicWeb2.git
+		- >> git remote remove origin (remoteì œê±°)
+		- >> git remote add origin https://github.com/Denma/MosaicWeb.git
 		- >> git push -u origin master
-	- °³¹ßÀÚ 2°¡ Clone ¼öÇà
-		- >> git clone https://github.com/Denma/MosaicWeb2.git
-		- >> git clone https://github.com/Denma/MosaicWeb2.git MosaicWebDev2 (MasaicWebDev2Æú´õ »ı¼º ÈÄ Clone)
-		- >> Eclipse Gradle Import (Æú´õ°¡ refreshµÇ°Ô ÇÔ)
-	- °³¹ßÀÚ 1(master)ÀÇ º¯°æ»çÇ× ÀúÀå
+	- ê°œë°œì 2ê°€ Clone ìˆ˜í–‰
+		- >> git clone https://github.com/Denma/MosaicWeb.git
+		- >> git clone https://github.com/Denma/MosaicWeb.git MosaicWebDev (MasaicWebDeví´ë” ìƒì„± í›„ Clone)
+		- >> Eclipse Gradle Import		
+	- ê°œë°œì 1(master)ì˜ ë³€ê²½ì‚¬í•­ ì €ì¥
 		- >> git add .
 		- >> git status
-		- >> git commit -m "second commit"
 		- >> git git push
-	- °³¹ßÀÚ 2°¡ º¯°æ»çÇ× ¹Ş¾Æ¿À±â
+	- ê°œë°œì 2ê°€ ë³€ê²½ì‚¬í•­ ë°›ì•„ì˜¤ê¸°
 		- >> git pull
 		
+3. HTML ì„¤ì •
+
+	- ì„¤ì • ë¶ˆí•„ìš”
+	- mkdir src/main/webapp í´ë” ìƒì„±
+	- notepad src/main/webapp/Hello.html
+	- gradle bootRun 
+	- Firefox ==> http://localhost:8080/Hello.html
+		
+4. JSP ì„¤ì •
+
+	- mvnrepository.com  >> search : tomcat jasper
+	- build.gradle dependency : providedRuntime group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.5.4'
+	- Eclipse -> Gradle Refresh
+	- notepad src/main/webapp/Hello.jsp
+	- gradle bootRun
+	- Firefox ==> http://localhost:8080/Hello.jsp
+	
+5. Servlet ì„¤ì •	
+	
+	- MosaicWebApplication.java << @ServletComponentScan ì¶”ê°€
+	- com.hybrid.servlet.HelloServlet.java ìƒì„±
+	- Eclipse -> project -> Project Pacets 
+	- >> Dynamic WebModule (version : 3.1)
+	- >> java(version : 1.8)
+	- >> javascript(version : 1.0)
+	- gradle bootRun
+	- Firefox ==> http://localhost:8080/HelloServlet
+	
+6. Springloaded ì„¤ì • (ë¦¬ë¡œë“œ ê¸°ëŠ¥)
+	
+	- Terminalì—ì„œ tree /f ìœ¼ë¡œ êµ¬ì¡°ë¥¼ ë³´ë©´ HelloServlet.classê°€ ë‘ê³³ì— ìˆëŠ”ë° Eclipseê°€ ì €ì¥í•˜ëŠ” ê³³ì„ Gradleì´ ì €ì¥í•˜ëŠ” ê³³ê³¼ ë§ì¶°ì¤€ë‹¤.
+	- mvnrepository.com >> search : springloaded
+	- build.gradleì— ì„¤ì • (ë‘ ê³³)
+	->> (ìœ„ìª½ dependencies) classpath("org.springframework:springloaded:1.2.6.RELEASE") 
+	->> (ì•„ë˜ìª½ dependencies) compile group: 'org.springframework', name: 'springloaded', version: '1.2.6.RELEASE'
+	- Eclipse Output Directory ë³€ê²½
+	- 	bin ==> build/classes/main
+	- ê°œë°œì2ëŠ” Project -> Properties ì—ì„œ ë‘ê°€ì§€ ë³€ê²½ì´ í•„ìš”í•¨
+	- 1. Project Pacets 
+	- >> Dynamic WebModule (version : 3.1)
+	- >> java(version : 1.8)
+	- >> javascript(version : 1.0)
+	- 2. Eclipse Output Directory ë³€ê²½
+	- >> Java Build Path -> Source -> Default output folder
+	- >> bin ==> build/classes/main
+	
+7. Mybatis
+
+	- mvnrepository.com >> search : Mybatis Spring Boot Starter
+	- build.gradleì˜ Dependencyì— ì„¤ì •
+	- >> compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
+	- >> src/main/webapp/WEB-INF/libì— ojdbc7.jar ê°€ì ¸ì˜¤ê¸°
+	- >> compile files('src/main/webapp/WEB-INF/lib/ojdbc7.jar');
+	- application.properties
+	-	>>spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+	-	>>spring.datasource.url=jdbc:oracle:thin:@52.78.104.216:1521:orcl
+	-	>>spring.datasource.username=scott
+	-	>>spring.datasource.password=tiger
+	- Eclipse Gradle Refresh
+	- gradle bootRun
+	
+	- notepad src/main/java/com/hybrid/mapper/DeptMapper.java (ì¸í„°í˜ì´ìŠ¤ ìƒì„±)
+	- notepad src/main/java/com/hybrid/domain/Dept.java
+	- notepad src/test/java/com/hybrid/mapper/DeptMapperTest.java
+	- notepad src/main/webapp/dept.jsp	
+	
+8. Deploy ë°©ë²•
+
+	- gradle war (MosaicWeb/build/libs/MosaicWebxxx.war ìƒì„±)
+	- MosaicWeb.war ë¥¼ C:\Program Files\Apache Software Foundation\Tomcat 8.5\webappsì— ë³µì‚¬í•œë‹¤.
+	- Browser -> http://localhost/MosaicWeb.index.html
+	
+9. Gluon ì„¤ì •
+
+	- FXTemplate/srcë¥¼ MosaicWeb/srcì— ë³µì‚¬í•œë‹¤
+	- FXTemplate/build.gradleì„ MosaicWeb/build.gradleì— í†µí•©ì‹œí‚¨ë‹¤. (build.gradle ë‚´ì˜ 5~7ë²ˆ ì„¸íŒ…)
+	- com.hybrid.fx.MainApplicationê³¼ com.hybrid.MosaicWebApplication í†µí•© (initê³¼ closeë¥¼ ê°™ì´í•˜ë„ë¡)
+	- 	>> spring boot + gluon start
+	- 	>> spring stop + gloun stop
+	-	>> PrimaryView ì— WebView ì¶”ê°€
+	
+	
+	
 	
